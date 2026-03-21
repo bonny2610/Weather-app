@@ -54,15 +54,15 @@ export const CurrentWeatherContainer = ({
     snow,
     windUnit,
 }) => {
-    // Build icon URL from OpenWeatherMap icon code (@2x for higher resolution)
-    const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    // Use HTTPS to avoid mixed content blocking on modern browsers
+    const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
 
     // Derive descriptive labels and CSS classes from raw weather values
-    const humidityInfo  = humidityPredict(humidity);
-    const windDirection = windDirect(windDeg);
-    const pressureInfo  = pressureLevel(pressure);
+    const humidityInfo   = humidityPredict(humidity);
+    const windDirection  = windDirect(windDeg);
+    const pressureInfo   = pressureLevel(pressure);
     const visibilityInfo = VisibilityLevel(visibility);
-    const tempInfo      = tempRating(feelLike);
+    const tempInfo       = tempRating(feelLike);
 
     // Precipitation info — only computed when rain/snow is present
     const rainInfo = rain ? rainLevel(rain) : null;
@@ -157,7 +157,7 @@ export const CurrentWeatherContainer = ({
                     <p className={`weather-status ${pressureInfo.className}`}>{pressureInfo.level}</p>
                 </div>
 
-                {/* Visibility (converted from meters to km) */}
+                {/* Visibility (converted from metres to km) */}
                 <div className="small-container">
                     <div className="header-container">
                         <img src={visibilityIcon} alt="visibility" className="icon-picture" />

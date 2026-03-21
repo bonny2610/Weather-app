@@ -12,7 +12,6 @@ import {
 } from 'chart.js';
 import { TimeConverter } from '../../utils/TimeConverter';
 
-// Register all required Chart.js components
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
 /**
@@ -24,9 +23,9 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarEleme
  * @param {string} unit       - Temperature unit label (°C / °F / K)
  */
 export const ForecastChart = ({ weatherArr, timezone, unit }) => {
-    const degGraph   = [];
-    const times      = [];
-    const humiditys  = [];
+    const degGraph  = [];
+    const times     = [];
+    const humiditys = [];
 
     // Extract temperature and humidity for the next 10 time intervals
     for (let index = 0; index < 10; index++) {
@@ -37,12 +36,11 @@ export const ForecastChart = ({ weatherArr, timezone, unit }) => {
         humiditys.push(main.humidity);
     }
 
-    // Chart.js dataset configuration
     const data = {
         labels: times,
         datasets: [
             {
-                label: `Temperature (${unit})`,
+                label: `Temp (${unit})`,
                 data: degGraph,
                 fill: true,
                 backgroundColor: 'rgba(245, 131, 89, 0.5)',
@@ -65,12 +63,20 @@ export const ForecastChart = ({ weatherArr, timezone, unit }) => {
         ]
     };
 
-    // Chart options — dual Y axes for temperature (left) and humidity (right)
+    // Chart options — dual Y axes, responsive legend, mobile-friendly fonts
     const options = {
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
-            legend: { position: 'top' },
+            legend: {
+                position: 'top',
+                labels: {
+                    // Smaller legend on mobile to prevent overflow
+                    font: { size: window.innerWidth < 500 ? 10 : 12 },
+                    boxWidth: window.innerWidth < 500 ? 12 : 20,
+                    padding: window.innerWidth < 500 ? 6 : 10,
+                }
+            },
             tooltip: {
                 // Show both datasets in the same tooltip for easier comparison
                 mode: 'index',
@@ -79,8 +85,8 @@ export const ForecastChart = ({ weatherArr, timezone, unit }) => {
         },
         elements: {
             point: {
-                radius: 5,
-                hoverRadius: 8,
+                radius: window.innerWidth < 500 ? 3 : 5,
+                hoverRadius: window.innerWidth < 500 ? 5 : 8,
                 borderWidth: 2,
                 hoverBorderWidth: 3
             }
@@ -90,23 +96,38 @@ export const ForecastChart = ({ weatherArr, timezone, unit }) => {
                 beginAtZero: true,
                 position: 'left',
                 title: {
-                    display: true,
-                    text: `Temperature (${unit})`,
-                    color: 'rgb(255, 0, 0)'
+                    display: window.innerWidth >= 500,
+                    text: `Temp (${unit})`,
+                    color: 'rgb(255, 0, 0)',
+                    font: { size: 11 }
                 },
-                ticks: { color: 'rgb(255, 0, 0)' }
+                ticks: {
+                    color: 'rgb(255, 0, 0)',
+                    font: { size: window.innerWidth < 500 ? 9 : 11 },
+                    maxTicksLimit: 6,
+                }
             },
             'y-humidity': {
                 beginAtZero: true,
                 position: 'right',
                 title: {
-                    display: true,
+                    display: window.innerWidth >= 500,
                     text: 'Humidity (%)',
-                    color: 'rgb(0, 123, 255)'
+                    color: 'rgb(0, 123, 255)',
+                    font: { size: 11 }
                 },
-                ticks: { color: 'rgb(0, 123, 255)' },
-                // Prevent humidity grid lines from overlapping temperature grid
+                ticks: {
+                    color: 'rgb(0, 123, 255)',
+                    font: { size: window.innerWidth < 500 ? 9 : 11 },
+                    maxTicksLimit: 6,
+                },
                 grid: { drawOnChartArea: false }
+            },
+            x: {
+                ticks: {
+                    font: { size: window.innerWidth < 500 ? 9 : 11 },
+                    maxRotation: 45,
+                }
             }
         }
     };
