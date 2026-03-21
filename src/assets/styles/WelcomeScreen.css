@@ -1,0 +1,138 @@
+@keyframes ws-cloud1  { 0%{transform:translateX(-220px)} 100%{transform:translateX(110vw)} }
+@keyframes ws-cloud2  { 0%{transform:translateX(-300px)} 100%{transform:translateX(110vw)} }
+@keyframes ws-cloud3  { 0%{transform:translateX(-180px)} 100%{transform:translateX(110vw)} }
+@keyframes ws-bird    { 0%{transform:translateX(-80px) translateY(0)} 50%{transform:translateX(50vw) translateY(-18px)} 100%{transform:translateX(110vw) translateY(4px)} }
+@keyframes ws-ray     { 0%,100%{opacity:.18} 50%{opacity:.32} }
+@keyframes ws-float   { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes ws-fadein  { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes ws-shimmer { 0%,100%{opacity:.7} 50%{opacity:1} }
+@keyframes ws-pulse   { 0%{opacity:.4;transform:scale(1)} 100%{opacity:0;transform:scale(1.65)} }
+@keyframes ws-rotate  { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes ws-live    { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.weather-tips-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #1a3a5c 0%, #2d6a9f 35%, #4a90c4 60%, #7ab8d9 80%, #b8d9ee 100%) !important;
+}
+
+.ws-sun-ray {
+    position: absolute; top: 4%; right: 10%;
+    width: 160px; height: 160px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,220,80,0.18) 30%, transparent 70%);
+    animation: ws-ray 4s ease-in-out infinite;
+    pointer-events: none; z-index: 0;
+}
+.ws-sun {
+    position: absolute; top: 6%; right: 12%;
+    width: 80px; height: 80px; border-radius: 50%;
+    background: radial-gradient(circle, #ffe066 40%, #ffb300 70%, transparent 100%);
+    opacity: .7; pointer-events: none; z-index: 0;
+}
+
+.ws-cloud { position: absolute; pointer-events: none; z-index: 0; }
+.ws-cloud svg { display: block; }
+.ws-c1 { top: 8%;  animation: ws-cloud1 28s linear infinite; }
+.ws-c2 { top: 18%; animation: ws-cloud2 40s linear infinite 8s; }
+.ws-c3 { top: 30%; animation: ws-cloud3 34s linear infinite 4s; }
+.ws-c4 { top: 12%; animation: ws-cloud1 50s linear infinite 15s; opacity: .6; }
+.ws-c5 { top: 24%; animation: ws-cloud2 44s linear infinite 20s; opacity: .5; }
+
+.ws-bird  { position: absolute; top: 22%; animation: ws-bird 18s linear infinite 3s;  pointer-events: none; z-index: 0; }
+.ws-bird2 { position: absolute; top: 26%; animation: ws-bird 22s linear infinite 10s; pointer-events: none; z-index: 0; opacity: .7; }
+
+.ws-badge {
+    position: relative; z-index: 2;
+    font-size: 10px; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.55); margin-bottom: 16px;
+    animation: ws-fadein .5s ease both;
+}
+
+.ws-icon-wrap {
+    position: relative; z-index: 2; margin-bottom: 32px;
+    animation: ws-float 5s ease-in-out infinite, ws-fadein .6s ease .1s both;
+}
+.ws-orbit {
+    position: absolute; inset: -20px;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;
+    animation: ws-rotate 14s linear infinite;
+}
+.ws-orbit::after {
+    content: ''; position: absolute;
+    width: 6px; height: 6px; background: #fff;
+    border-radius: 50%; top: -3px; left: 50%; margin-left: -3px; opacity: .8;
+}
+.ws-ring {
+    position: absolute; inset: -12px;
+    border: 1px solid rgba(255,255,255,0.25); border-radius: 50%;
+    animation: ws-pulse 3s ease-out infinite;
+}
+.ws-ring2 { animation-delay: 1.5s; }
+.ws-icon-circle {
+    width: 84px; height: 84px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    backdrop-filter: blur(8px);
+}
+
+.ws-headline {
+    position: relative; z-index: 2;
+    font-size: clamp(22px, 4.5vw, 38px); font-weight: 500;
+    color: #fff; text-align: center; line-height: 1.25;
+    margin: 0 0 8px; text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    animation: ws-fadein .6s ease .15s both;
+}
+.ws-headline em {
+    font-style: normal;
+    background: linear-gradient(90deg, #fff, #b8e4ff, #fff);
+    background-size: 200%;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: ws-shimmer 4s ease-in-out infinite;
+}
+.ws-subline {
+    position: relative; z-index: 2;
+    font-size: 12px; color: rgba(255,255,255,0.45);
+    letter-spacing: .12em; text-transform: uppercase;
+    margin-bottom: 40px;
+    animation: ws-fadein .6s ease .2s both;
+}
+
+.ws-tip-card {
+    position: relative; z-index: 2;
+    max-width: 540px; width: 100%;
+    animation: ws-fadein .7s ease .3s both;
+}
+.ws-card-inner {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 18px; padding: 24px 28px 20px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.ws-card-row { display: flex; gap: 16px; align-items: flex-start; }
+.ws-tip-icon {
+    flex-shrink: 0; width: 38px; height: 38px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+}
+.ws-tip-label { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
+.ws-tip-text  { font-size: 13.5px; line-height: 1.75; color: rgba(255,255,255,0.85); margin: 0; }
+.ws-divider   { height: 1px; background: rgba(255,255,255,0.15); margin: 16px 0 12px; }
+.ws-card-footer { display: flex; justify-content: space-between; align-items: center; }
+.ws-live-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: #7ee8a2; display: inline-block; margin-right: 6px;
+    animation: ws-live 2s ease-in-out infinite;
+}
+.ws-cf-label { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: .08em; }
+.ws-cf-hint  { font-size: 10px; color: rgba(255,255,255,0.3); letter-spacing: .06em; }

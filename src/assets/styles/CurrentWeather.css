@@ -1,0 +1,355 @@
+.current-weather {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 1vh 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vh;
+    height: 5vh;
+    margin-bottom: 1vh;
+}
+
+.header-container p {
+    font-size: 2.2vh;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+    min-width: max-content;
+}
+
+.header-container span {
+    display: flex;
+    align-items: center;
+    font-size: 2.2vh;
+    margin: 0 0.5vh;
+}
+
+.icon-picture {
+    width: 3vh;
+    height: 3vh;
+    padding: 0;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 800px) {
+    .current-weather {
+        justify-content: center;
+        gap: 1vh;
+    }
+
+    .small-container {
+        width: 45%;
+        max-width: 45%;
+        height: auto;
+        padding: 1.5vh;
+    }
+
+    .header-container {
+        gap: 0.5vh;
+        height: auto;
+    }
+
+    .header-container p {
+        font-size: 1.6vh;
+    }
+
+    .icon-picture {
+        width: 2.5vh;
+        height: 2.5vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .small-container {
+        width: 95%;
+        max-width: 95%;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5vh;
+    }
+
+    .header-container p {
+        font-size: 1.8vh;
+    }
+}
+
+.small-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    width: 100%;
+    max-width: 20vh;
+    padding: 2vh 1vh;
+    height: 20vh;
+    margin: 1vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.small-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.weather-value,
+.weather-status,
+.header-container p {
+    color: var(--text-primary);
+}
+
+.header-container {
+    gap: 1vh;
+    height: 5vh;
+    margin-bottom: 1vh;
+}
+
+.small-container:hover {
+    transform: translateY(-2px);
+    background: rgba(72, 72, 74, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.level {
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.very-dry {
+    color: #E53935;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.dry {
+    color: #FB8C00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.relatively-good {
+    color: #43A047;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ideal {
+    color: #2E7D32;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.slightly-humid {
+    color: #FFB300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.high-humidity {
+    color: #F57C00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.very-humid {
+    color: #D32F2F;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.very-low-pressure {
+    color: #D32F2F;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.low-pressure {
+    color: #F57C00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.normal-pressure {
+    color: #039BE5 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.high-pressure {
+    color: #43A047;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.very-high-pressure {
+    color: #C62828;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.very-poor {
+    color: #C62828;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.poor {
+    color: #EF6C00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.moderate {
+    color: #FFA000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.good {
+    color: #43A047;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.excellent {
+    color: #1976D2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-very-cold {
+    color: #1E88E5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-cold {
+    color: #42A5F5;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-quite-cool {
+    color: #4CAF50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-fine {
+    color: #FDD835;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-quite-hot {
+    color: #FB8C00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-extremely-hot {
+    color: #E53935;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.temp-unknown {
+    color: #808080;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.light-rainfall {
+    color: #81D4FA;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.moderate-rainfall {
+    color: #4FC3F7;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.heavy-rainfall {
+    color: #1e90ff;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.very-heavy-rainfall {
+    color: #104e8b;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.extreme-rainfall {
+    color: #00008b;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.light-snowfall {
+    color: #d3d3d3;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.moderate-snowfall {
+    color: #b0c4de;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.heavy-snowfall {
+    color: #87ceeb;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.very-heavy-snowfall {
+    color: #4682b4;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.extreme-snowfall {
+    color: #1e90ff;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.weather-overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-bottom: 2vh;
+}
+
+.weather-overview h1 {
+    font-size: 5vh;
+    padding: 2vh 0;
+    font-weight: 500;
+}
+
+.weather-overview img {
+    width: 15vh;
+    height: 15vh;
+    margin: 1vh auto;
+}
+
+.weather-overview .temperature {
+    font-size: 5vh;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1vh 0;
+}
+
+.weather-overview .description {
+    font-size: 3vh;
+    padding: 1vh;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.weather-overview .sub-description {
+    font-size: 2vh;
+    padding: 1vh;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.weather-value {
+    font-size: 2.5vh;
+    margin: 1vh 0;
+}
+
+.weather-status {
+    font-weight: 600;
+    font-size: 2vh;
+}

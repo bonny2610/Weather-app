@@ -1,0 +1,123 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 8vh;
+}
+
+.sidenav select {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 2vh;
+    transition: 0.3s;
+    padding: 0.5vh;
+}
+
+label {
+    margin-left: 1.5vh;
+    padding: 1vh 0;
+    color: white;
+}
+
+.sidenav hr {
+    margin: 0 auto;
+    padding: 1vh;
+    width: 100%;
+    max-width: 80%;
+}
+
+.sidenav a {
+    text-decoration: none;
+    padding: 1vh;
+    font-size: 14px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    color: red;
+    top: 0;
+    font-size: 36px;
+}
+
+#main {
+    transition: margin-right .5s;
+    padding: 0 2vh;
+}
+
+.navbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+.navbar-brand {
+    font-size: 16px !important;
+    margin: 0 !important;
+}
+
+.navbar-brand img {
+    width: 22px !important;
+    height: 22px !important;
+}
+
+.form-control {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    font-size: 14px !important;
+}
+
+.btn {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    font-size: 14px !important;
+}
+
+.recent-searches {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    color: #343a40;
+}
+
+.recent-searches h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+.recent-searches ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recent-searches li {
+    padding: 5px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.recent-searches li:last-child {
+    border-bottom: none;
+}
+
+.recent-searches li:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}

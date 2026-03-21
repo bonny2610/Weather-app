@@ -1,0 +1,87 @@
+/* Background — full-viewport, always present*/
+#background {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+#background.sunny-background,
+#background.clear-background,
+#background.clouds-background,
+#background.thunderstorm-background,
+#background.drizzle-background,
+#background.rain-background,
+#background.snow-background,
+#background.atmosphere-background {
+    min-height: 100vh;
+}
+
+/* Overlay */
+#background::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#background>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Weather backgrounds — Unsplash */
+
+.sunny-background {
+    background-image: url("https://images.unsplash.com/photo-1504608524841-42584120d693?w=1600&auto=format&fit=crop&q=80");
+    background-color: #FFD700;
+    color: #fff;
+}
+
+.clear-background {
+    background-image: url("https://images.unsplash.com/photo-1601297183305-6df142704ea2?w=1600&auto=format&fit=crop&q=80");
+    background-color: #5DA8D9;
+    color: #fff;
+}
+
+.clouds-background {
+    background-image: url("https://images.unsplash.com/photo-1499956827185-0d63ee78a910?w=1600&auto=format&fit=crop&q=80");
+    background-color: #778899;
+    color: #fff;
+}
+
+.thunderstorm-background {
+    background-image: url("https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?w=1600&auto=format&fit=crop&q=80");
+    background-color: #1A1A2E;
+    color: #fff;
+}
+
+.drizzle-background {
+    background-image: url("https://images.unsplash.com/photo-1541919329513-35f7af297129?w=1600&auto=format&fit=crop&q=80");
+    background-color: #5A8CA8;
+    color: #fff;
+}
+
+.rain-background {
+    background-image: url("https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?w=1600&auto=format&fit=crop&q=80");
+    background-color: #3A6F8C;
+    color: #fff;
+}
+
+.snow-background {
+    background-image: url("https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=1600&auto=format&fit=crop&q=80");
+    background-color: #B3E5FC;
+    color: #fff;
+}
+
+.atmosphere-background {
+    background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&auto=format&fit=crop&q=80");
+    background-color: #B0C4DE;
+    color: #fff;
+}
