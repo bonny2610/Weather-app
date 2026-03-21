@@ -10,11 +10,11 @@ import rainIcon from '../../assets/icons/icons8-rain-50.png';
 const Card = ({ date, icon, temps, unit, humidities, winds, rains, snows, times, windUnit }) => {
     const { setSelectedDay } = useContext(WeatherContext);
 
-    let avgTemp = temps.reduce((sum, t) => sum + t, 0) / temps.length;
-    let avgHumid = humidities.reduce((sum, t) => sum + t, 0) / humidities.length;
-    let avgWinds = winds.reduce((sum, t) => sum + t, 0) / winds.length;
-    let avgRains = rains.reduce((sum, t) => sum + t, 0) / rains.length;
-    let avgSnow = snows.reduce((sum, t) => sum + t, 0) / snows.length;
+    const avgTemp  = temps.reduce((sum, t) => sum + t, 0) / temps.length;
+    const avgHumid = humidities.reduce((sum, t) => sum + t, 0) / humidities.length;
+    const avgWinds = winds.reduce((sum, t) => sum + t, 0) / winds.length;
+    const avgRains = rains.reduce((sum, t) => sum + t, 0) / rains.length;
+    const avgSnow  = snows.reduce((sum, t) => sum + t, 0) / snows.length;
 
     const hasRainsData = rains.some(value => value > 0);
     const hasSnowsData = snows.some(value => value > 0);
@@ -23,7 +23,12 @@ const Card = ({ date, icon, temps, unit, humidities, winds, rains, snows, times,
         <div className="weather-card" onClick={() => setSelectedDay({ date, temps, times, rains, snows, winds })}>
             <div className="weather-card-date">{date}</div>
             <hr />
-            <img src={`http://openweathermap.org/img/wn/${icon}.png`} alt="weather-forecast-icon" className="weather-forecast-icon" />
+            {/* Use HTTPS to prevent mixed content blocking on modern browsers */}
+            <img
+                src={`https://openweathermap.org/img/wn/${icon}.png`}
+                alt="weather-forecast-icon"
+                className="weather-forecast-icon"
+            />
             <hr />
             <div className="weather-card-temp">{avgTemp.toFixed(1)} {unit}</div>
             <div className="details-info">

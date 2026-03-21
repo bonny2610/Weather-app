@@ -85,3 +85,12 @@
     background-color: #B0C4DE;
     color: #fff;
 }
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+#background {
+    overflow-x: hidden;
+    max-width: 100vw;
+}

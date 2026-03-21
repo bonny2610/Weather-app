@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .container-2 {
     display: flex;
     flex-direction: row;
@@ -19,40 +23,58 @@
     border-radius: 18px;
     margin: 4vh auto;
     width: calc(100% - 4rem);
-    max-width: none;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
 }
 
 .container-3 > div {
-    flex: 0 1 440px;
-    min-width: 340px;
+    flex: 1 1 300px;
+    min-width: 0;
     max-width: 440px;
     display: flex;
     flex-direction: column;
 }
 
+/* Xóa margin-left cứng gây lệch trên tablet/mobile */
 .container-3 > div:nth-child(2) {
-    margin-left: 7rem;
+    margin-left: 0;
 }
-@media (max-width: 500px) {
-    .container-3 {
-        display: flex;
+
+@media (max-width: 900px) {
+    .container-2 {
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 2vh;
-        background: rgba(255, 255, 255, 0.12);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 15px;
-        margin: 2vh auto;
-        width: 90%;
-        max-width: 90%;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        align-items: center;
+        gap: 2rem;
     }
 
-    .container-3>div {
+    .container-2 .type-1-chart,
+    .container-2 .map-wrap {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-3 {
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+        width: calc(100% - 2rem);
+        margin: 2vh auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-3 {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+        width: 90%;
+        margin: 2vh auto;
+        border-radius: 15px;
+    }
+
+    .container-3 > div {
         width: 100%;
         max-width: none;
         min-width: unset;
@@ -67,12 +89,11 @@
     height: 100vh;
     text-align: center;
     padding: 20px;
-    background-color: #f0f8ff;
 }
 
 .weather-tips {
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px;
     margin: 20px;
@@ -90,13 +111,13 @@
 
 .weather-tips h2 {
     font-size: 24px;
-    color: #333;
+    color: #fff;
     margin-bottom: 10px;
 }
 
 .weather-tips p {
     font-size: 18px;
-    color: #666;
+    color: rgba(255,255,255,0.8);
 }
 
 .weather-icon {
@@ -105,31 +126,8 @@
     margin-right: 10px;
 }
 
-@media (max-width: 900px) {
-    .container-2 {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .container-2 .type-1-chart,
-    .container-2 .map-wrap {
-        width: 100%;
-        max-width: 90%;
-    }
-}
-
 @media (max-width: 600px) {
-    .weather-tips h2 {
-        font-size: 20px;
-    }
-
-    .weather-tips p {
-        font-size: 16px;
-    }
-
-    .weather-icon {
-        width: 40px;
-        height: 40px;
-    }
+    .weather-tips h2 { font-size: 20px; }
+    .weather-tips p  { font-size: 16px; }
+    .weather-icon    { width: 40px; height: 40px; }
 }
