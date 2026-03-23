@@ -16,19 +16,10 @@
  */
 export function changeBackground(condition) {
     const weatherClassMap = {
-        // Thunderstorm group (2xx)
         "Thunderstorm": "thunderstorm-background",
-
-        // Drizzle group (3xx)
         "Drizzle": "drizzle-background",
-
-        // Rain group (5xx)
         "Rain": "rain-background",
-
-        // Snow group (6xx)
         "Snow": "snow-background",
-
-        // Atmosphere group (7xx)
         "Mist":    "atmosphere-background",
         "Smoke":   "atmosphere-background",
         "Haze":    "atmosphere-background",
@@ -38,14 +29,8 @@ export function changeBackground(condition) {
         "Ash":     "atmosphere-background",
         "Squall":  "atmosphere-background",
         "Tornado": "atmosphere-background",
-
-        // Clear group (800)
         "Clear": "clear-background",
-
-        // Clouds group (80x)
         "Clouds": "clouds-background",
     };
-
-    // Fall back to sunny-background if condition is unrecognized
     return weatherClassMap[condition] || "sunny-background";
 }

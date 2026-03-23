@@ -227,7 +227,7 @@
 .temp-fine { color: #FDD835; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
 .temp-quite-hot { color: #FB8C00; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
 .temp-extremely-hot { color: #E53935; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-.temp-unknown { color: #808080; text-shadow: 1px 1px 2px rgba(255,255,255,0.6); }
+.temp-unknown { color: #ca621c; text-shadow: 1px 1px 2px rgba(201, 13, 13, 0.6); }
 .light-rainfall { color: #81D4FA; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
 .moderate-rainfall { color: #4FC3F7; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
 .heavy-rainfall { color: #1e90ff; text-shadow: 1px 1px 2px rgba(255,255,255,0.6); }
