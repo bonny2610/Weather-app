@@ -53,6 +53,7 @@ export const HomePage = () => {
 
                 if (dataLocation.length === 0) {
                     setError("City not found");
+                    setShowHome(true);  // ← quay về trang chủ nếu không tìm thấy
                     setLoading(false);
                     return;
                 }
@@ -62,6 +63,7 @@ export const HomePage = () => {
                 setDetailsName(dataLocation[0].display_name);
             } catch (error) {
                 setError(error.message);
+                setShowHome(true);  // ← quay về trang chủ nếu API lỗi
                 setLoading(false);
             }
         }

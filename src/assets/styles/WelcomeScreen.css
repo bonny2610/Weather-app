@@ -38,14 +38,16 @@
 
 .ws-cloud { position: absolute; pointer-events: none; z-index: 0; }
 .ws-cloud svg { display: block; }
-.ws-c1 { top: 8%;  animation: ws-cloud1 28s linear infinite; }
-.ws-c2 { top: 18%; animation: ws-cloud2 40s linear infinite 8s; }
-.ws-c3 { top: 30%; animation: ws-cloud3 34s linear infinite 4s; }
-.ws-c4 { top: 12%; animation: ws-cloud1 50s linear infinite 15s; opacity: .6; }
-.ws-c5 { top: 24%; animation: ws-cloud2 44s linear infinite 20s; opacity: .5; }
 
-.ws-bird  { position: absolute; top: 22%; animation: ws-bird 18s linear infinite 3s;  pointer-events: none; z-index: 0; }
-.ws-bird2 { position: absolute; top: 26%; animation: ws-bird 22s linear infinite 10s; pointer-events: none; z-index: 0; opacity: .7; }
+/* delay âm → mây đã ở giữa chừng khi trang load, chuyển động ngay lập tức */
+.ws-c1 { top: 8%;  animation: ws-cloud1 28s linear infinite -5s; }
+.ws-c2 { top: 18%; animation: ws-cloud2 40s linear infinite -15s; }
+.ws-c3 { top: 30%; animation: ws-cloud3 34s linear infinite -10s; }
+.ws-c4 { top: 12%; animation: ws-cloud1 50s linear infinite -25s; opacity: .6; }
+.ws-c5 { top: 24%; animation: ws-cloud2 44s linear infinite -20s; opacity: .5; }
+
+.ws-bird  { position: absolute; top: 22%; animation: ws-bird 18s linear infinite -5s;  pointer-events: none; z-index: 0; }
+.ws-bird2 { position: absolute; top: 26%; animation: ws-bird 22s linear infinite -10s; pointer-events: none; z-index: 0; opacity: .7; }
 
 .ws-badge {
     position: relative; z-index: 2;
