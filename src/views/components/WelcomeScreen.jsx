@@ -68,7 +68,7 @@ export const WelcomeScreen = ({ randomTip }) => {
             </div>
 
             <h1 className="ws-headline">Hi, Welcome to the</h1>
-            <h1 className="ws-headline"><em>Ultimate Weather System</em></h1>
+           <h1 className="ws-headline"><em>Ultimate Weather System</em></h1> 
             <p className="ws-subline">Search any city across the globe</p>
 
             <div className="ws-tip-card">
