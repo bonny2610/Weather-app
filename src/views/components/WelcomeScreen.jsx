@@ -56,8 +56,6 @@ export const WelcomeScreen = ({ randomTip }) => {
                 </svg>
             </div>
 
-            <p className="ws-badge">✦ Ultimate Legit Weather Forecast ✦</p>
-
             <div className="ws-icon-wrap">
                 <div className="ws-orbit" />
                 <div className="ws-ring" />
