@@ -21,7 +21,7 @@ export function changeBackground(condition) {
         "Rain": "rain-background",
         "Snow": "snow-background",
         "Mist":    "atmosphere-background",
-        "Smoke":   "atmosphere-background",
+        "Smoke":   "atmosphere-background",fs
         "Haze":    "atmosphere-background",
         "Dust":    "atmosphere-background",
         "Fog":     "atmosphere-background",
